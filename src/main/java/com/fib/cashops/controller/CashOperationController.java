@@ -12,14 +12,11 @@ import javax.validation.Valid;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
-public class CashOperationsController {
-
-
 
     @RestController
     @RequestMapping("/api/v1")
     @RequiredArgsConstructor
-    public static class CashOperationController {
+    public class CashOperationController {
 
         private final CashOperationService service;
 
@@ -37,4 +34,4 @@ public class CashOperationsController {
             return ResponseEntity.ok(service.getCashiers(cashier, dateFrom, dateTo));
         }
     }
-}
+

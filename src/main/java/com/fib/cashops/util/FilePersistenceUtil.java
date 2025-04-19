@@ -1,5 +1,3 @@
-
-// UTILITIES
 package com.fib.cashops.util;
 
 import com.fib.cashops.model.*;

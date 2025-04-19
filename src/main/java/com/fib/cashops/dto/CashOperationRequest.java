@@ -1,5 +1,3 @@
-
-// DTO
 package com.fib.cashops.dto;
 
 import lombok.Data;
