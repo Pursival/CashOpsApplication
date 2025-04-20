@@ -1,8 +1,8 @@
 package com.fib.cashops.controller;
 
 import com.fib.cashops.dto.CashOperationRequest;
+import com.fib.cashops.dto.CashierBalanceResponse;
 import com.fib.cashops.service.CashOperationService;
-import com.fib.cashops.model.Cashier;
 import lombok.RequiredArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
@@ -26,7 +26,7 @@ import java.util.Optional;
         }
 
         @GetMapping("/cash-balance")
-        public ResponseEntity<List<Cashier>> getBalances(
+        public ResponseEntity<List<CashierBalanceResponse>> getBalances(
                 @RequestParam Optional<String> cashier,
                 @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Optional<LocalDate> dateFrom,
                 @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Optional<LocalDate> dateTo

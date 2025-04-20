@@ -1,0 +1,216 @@
+{
+	"info": {
+		"_postman_id": "edddddba-2b44-4817-9dc0-58b7d89688d0",
+		"name": "Cash Ops API",
+		"description": "Postman Collection for Cash Operations Module",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44235692",
+		"_collection_link": "https://ivo-827950.postman.co/workspace/Ivo's-Workspace~3f183544-c9a1-49a6-8a21-bca68e16f921/collection/44235692-edddddba-2b44-4817-9dc0-58b7d89688d0?action=share&source=collection_link&creator=44235692"
+	},
+	"item": [
+		{
+			"name": "Cash Operation WithdrawBGN",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "FIB-X-AUTH",
+						"value": "{{API_KEY}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"cashier\": \"MARTINA\",\n  \"currency\": \"BGN\",\n  \"type\": \"WITHDRAWAL\",\n  \"denominations\": {\n    \"10\": 5,\n    \"50\": 1\n  }\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/v1/cash-operation",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"cash-operation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cash Operation WithdrawEUR",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "FIB-X-AUTH",
+						"value": "{{API_KEY}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"cashier\": \"MARTINA\",\n  \"currency\": \"EUR\",\n  \"type\": \"WITHDRAWAL\",\n  \"denominations\": {\n    \"50\": 10\n  }\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/v1/cash-operation",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"cash-operation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cash Operation DepositBGN",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "FIB-X-AUTH",
+						"value": "f9Uie8nNf112hx8s"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"cashier\": \"MARTINA\",\n  \"currency\": \"BGN\",\n  \"type\": \"DEPOSIT\",\n  \"denominations\": {\n    \"10\": 10,\n    \"50\": 10\n  }\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/v1/cash-operation",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"cash-operation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cash Operation DepositEUR",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "FIB-X-AUTH",
+						"value": "f9Uie8nNf112hx8s"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"cashier\": \"MARTINA\",\n  \"currency\": \"EUR\",\n  \"type\": \"DEPOSIT\",\n  \"denominations\": {\n    \"50\": 2,\n    \"20\": 5\n  }\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/v1/cash-operation",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"cash-operation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check Balance",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "FIB-X-AUTH",
+						"value": "{{API_KEY}}"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/v1/cash-balance?cashier=MARTINA&dateFrom=2025-04-01&dateTo=2025-04-30",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"cash-balance"
+					],
+					"query": [
+						{
+							"key": "cashier",
+							"value": "MARTINA"
+						},
+						{
+							"key": "dateFrom",
+							"value": "2025-04-01"
+						},
+						{
+							"key": "dateTo",
+							"value": "2025-04-30"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check Balance Copy",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "FIB-X-AUTH",
+						"value": "{{API_KEY}}"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/v1/cash-balance?cashier=MARTINA&dateFrom=2025-04-01&dateTo=2025-04-30",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"cash-balance"
+					],
+					"query": [
+						{
+							"key": "cashier",
+							"value": "MARTINA"
+						},
+						{
+							"key": "dateFrom",
+							"value": "2025-04-01"
+						},
+						{
+							"key": "dateTo",
+							"value": "2025-04-30"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
